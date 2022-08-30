@@ -1,13 +1,14 @@
 {
-    "name": "profit-dashboard",
-    "version": "0.0.1",
-    "description": "My profit dashboard app",
-    "dependencies": {
-        "dotenv": "^16.0.1",
-        "express": "4",
-        "fs-json-store": "^8.0.1",
-        "socket.io": "^4.5.1",
-        "socket.io-client": "^4.5.1",
-        "uuid": "^8.3.2"
-    }
+  "name": "profit-dashboard",
+  "version": "0.0.1",
+  "description": "My profit dashboard app",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "4",
+    "fs-json-store": "^8.0.1",
+    "prompt": "^1.3.0",
+    "socket.io": "^4.5.1",
+    "socket.io-client": "^4.5.1",
+    "uuid": "^8.3.2"
+  }
 }

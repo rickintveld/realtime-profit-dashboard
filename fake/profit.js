@@ -1,13 +1,60 @@
 const ioClient = require("socket.io-client");
 const socket = ioClient("http://localhost:3000/");
+const prompt = require("prompt");
 
-socket.emit("add_profit", {
-  type: "SELL",
-  symbol: "GBP/USD",
-  openPrice: 1.23293,
-  takeProfit: 1.23193,
-  stopLoss: 1.23193,
-  lotSize: 1.233,
-  commission: 15,
-  profit: 1000,
+let profit = {
+  type: "",
+  symbol: "",
+  openPrice: 0,
+  takeProfit: 0,
+  stopLoss: 0,
+  lotSize: 0,
+  commission: 0,
+  profit: 0,
+};
+
+const schema = {
+  properties: {
+    type: {
+      type: "string",
+      required: true,
+    },
+    symbol: {
+      type: "string",
+      required: true,
+    },
+    openPrice: {
+      type: "number",
+      required: true,
+    },
+    stopLoss: {
+      type: "number",
+      required: true,
+    },
+    takeProfit: {
+      type: "number",
+      required: true,
+    },
+    lotSize: {
+      type: "number",
+      required: true,
+    },
+    commission: {
+      type: "number",
+      required: true,
+    },
+    profit: {
+      type: "number",
+      required: true,
+    },
+  },
+};
+
+prompt.start();
+
+prompt.get(schema, function (err, result) {
+  profit = { ...result };
+
+  console.log("Sending new profit..:", profit);
+  socket.emit("add_profit", profit);
 });

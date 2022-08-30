@@ -68,6 +68,8 @@ socket.on("profits", (profits) => {
 
 // Add profit to the table and chart
 function addProfit(profitData) {
+  updateTotalProfit(profitData);
+
   const {
     type,
     symbol,
@@ -78,8 +80,6 @@ function addProfit(profitData) {
     commission,
     profit,
   } = profitData;
-
-  updateTotalProfit(profit);
 
   const table = document
     .getElementById("profit-table")
@@ -111,10 +111,11 @@ function addProfit(profitData) {
   chart.update();
 }
 
-function updateTotalProfit(profit) {
+function updateTotalProfit(profitData) {
   const profits = document.getElementById("totalProfit");
-  const total = parseInt(profits.innerText) + parseInt(profit);
-  profits.innerText = total;
+  const total =
+    parseFloat(profits.innerText) + (profitData.profit - profitData.commission);
+  profits.innerText = parseFloat(total);
 
   if (total > 0) {
     profits.className = "text-success";
