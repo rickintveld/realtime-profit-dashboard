@@ -4,6 +4,10 @@ const config = require("dotenv").config();
 
 module.exports = {
   connect: () => {
+    if (!config.METATRADER_API_TOKEN && !config.METATRADER_API_ACCOUNT_ID) {
+      return;
+    }
+
     const socket = client(config.METATRADER_API_URI, {
       path: "/ws",
       reconnection: false,
