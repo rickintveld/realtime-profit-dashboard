@@ -55,6 +55,8 @@ prompt.start();
 prompt.get(schema, function (err, result) {
   profit = { ...result };
 
-  console.log("Sending new profit..:", profit);
-  socket.emit("add_profit", profit);
+  if (!err) {
+    console.log("Sending new profit..:", profit);
+    socket.emit("add_profit", profit);
+  }
 });

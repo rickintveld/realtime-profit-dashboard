@@ -1,1 +1,32 @@
-[{"type":"BUY","symbol":"GBP/USD","openPrice":1.16905,"stopLoss":1.16889,"takeProfit":1.1718,"lotSize":5,"commission":15,"profit":530},{"type":"SELL","symbol":"GBP/USD","openPrice":1.17324,"stopLoss":1.17356,"takeProfit":1.17156,"lotSize":5,"commission":15,"profit":270},{"type":"BUY","symbol":"GBP/USD","openPrice":1.17161,"stopLoss":1.17082,"takeProfit":1.17239,"lotSize":5,"commission":15,"profit":40}]
+[
+  {
+    "type": "BUY",
+    "symbol": "GBP/USD",
+    "openPrice": 1.16905,
+    "stopLoss": 1.16889,
+    "takeProfit": 1.1718,
+    "lotSize": 5,
+    "commission": 15,
+    "profit": 530
+  },
+  {
+    "type": "SELL",
+    "symbol": "GBP/USD",
+    "openPrice": 1.17324,
+    "stopLoss": 1.17356,
+    "takeProfit": 1.17156,
+    "lotSize": 5,
+    "commission": 15,
+    "profit": 270
+  },
+  {
+    "type": "BUY",
+    "symbol": "GBP/USD",
+    "openPrice": 1.17161,
+    "stopLoss": 1.17082,
+    "takeProfit": 1.17239,
+    "lotSize": 5,
+    "commission": 15,
+    "profit": 40
+  }
+]
