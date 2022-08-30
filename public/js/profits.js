@@ -63,10 +63,7 @@ socket.on("profits", (profits) => {
     return;
   }
 
-  profits.forEach((profitData) => {
-    addProfit(profitData);
-    chart.data.datasets[0].data[date.getMonth()] += profitData.profit;
-  });
+  profits.forEach((profitData) => addProfit(profitData));
 });
 
 // Add profit to the table and chart

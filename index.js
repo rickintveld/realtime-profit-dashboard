@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const http = require("http");
 const server = http.createServer(app);
-const socket = require("./src/socket");
+const profitSocket = require("./src/profitSocket");
 const store = require("./src/store");
 const metaApi = require("./src/metaApi");
 
@@ -13,5 +13,5 @@ app.get("/", (req, res) => {
 });
 
 store.new();
-socket.new(server);
+profitSocket.new(server);
 metaApi.connect();
