@@ -96,7 +96,7 @@ function addProfit(profitData) {
   const profitCell = row.insertCell(7);
 
   let icon = '<i class="fa fa-arrow-down text-danger"></i> ';
-  if (type === "BUY" || type === "buy") {
+  if (["BUY", "buy"].includes(type)) {
     icon = '<i class="fa fa-arrow-up text-success"></i> ';
   }
 
