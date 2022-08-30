@@ -4,7 +4,7 @@ const chartData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 const date = new Date();
 
 // Data chart
-const ctx = document.getElementById("myChart");
+const ctx = document.getElementById("profitChart");
 const chart = new Chart(ctx, {
   type: "line",
   data: {
@@ -64,11 +64,8 @@ socket.on("profits", (profits) => {
   }
 
   profits.forEach((profitData) => {
-    chart.data.datasets[0].data[date.getMonth()] += profits.forEach(
-      (profitData) => {
-        addProfit(profitData);
-      }
-    );
+    addProfit(profitData);
+    chart.data.datasets[0].data[date.getMonth()] += profitData.profit;
   });
 });
 
@@ -85,6 +82,8 @@ function addProfit(profitData) {
     profit,
   } = profitData;
 
+  updateTotalProfit(profit);
+
   const table = document
     .getElementById("profit-table")
     .getElementsByTagName("tbody")[0];
@@ -98,6 +97,7 @@ function addProfit(profitData) {
   const lotSizeCell = row.insertCell(5);
   const commissionCell = row.insertCell(6);
   const profitCell = row.insertCell(7);
+
   typeCell.innerHTML = '<i class="fa fa-arrow-down text-danger"></i> ' + type;
   symbolCell.innerHTML = symbol;
   openPriceCell.innerHTML = openPrice;
@@ -112,4 +112,16 @@ function addProfit(profitData) {
   chart.data.datasets[0].data[date.getMonth()] =
     chart.data.datasets[0].data[date.getMonth()] + profit;
   chart.update();
+}
+
+function updateTotalProfit(profit) {
+  const profits = document.getElementById("totalProfit");
+  const total = parseInt(profits.innerText) + parseInt(profit);
+  profits.innerText = total;
+
+  if (total > 0) {
+    profits.className = "text-success";
+  } else {
+    profits.className = "text-danger";
+  }
 }
