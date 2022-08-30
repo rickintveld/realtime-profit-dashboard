@@ -1,4 +1,4 @@
-# Automated profit dashboard
+# Real time profit dashboard
 
 Opens a socket connection with MetaApi.
 
