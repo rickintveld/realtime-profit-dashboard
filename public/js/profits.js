@@ -95,15 +95,20 @@ function addProfit(profitData) {
   const commissionCell = row.insertCell(6);
   const profitCell = row.insertCell(7);
 
-  typeCell.innerHTML = '<i class="fa fa-arrow-down text-danger"></i> ' + type;
-  symbolCell.innerHTML = symbol;
+  let icon = '<i class="fa fa-arrow-down text-danger"></i> ';
+  if (type === "BUY" || type === "buy") {
+    icon = '<i class="fa fa-arrow-up text-success"></i> ';
+  }
+
+  typeCell.innerHTML = icon + type.toUpperCase();
+  symbolCell.innerHTML = symbol.toUpperCase();
   openPriceCell.innerHTML = openPrice;
   takeProfitCell.innerHTML = takeProfit;
   stopLossCell.innerHTML = stopLoss;
-  lotSizeCell.innerHTML = lotSize;
-  commissionCell.innerHTML = "$" + commission;
+  lotSizeCell.innerHTML = parseFloat(lotSize).toFixed(2);
+  commissionCell.innerHTML = "$" + parseFloat(commission).toFixed(2);
   commissionCell.className = "text-danger";
-  profitCell.innerHTML = "$" + profit;
+  profitCell.innerHTML = "$" + profit.toFixed(2);
   profitCell.className = profit > 0 ? "text-success" : "text-danger";
 
   chart.data.datasets[0].data[date.getMonth()] =
@@ -115,7 +120,7 @@ function updateTotalProfit(profitData) {
   const profits = document.getElementById("totalProfit");
   const total =
     parseFloat(profits.innerText) + (profitData.profit - profitData.commission);
-  profits.innerText = parseFloat(total);
+  profits.innerText = parseFloat(total).toFixed(2);
 
   if (total > 0) {
     profits.className = "text-success";
@@ -127,6 +132,7 @@ function updateTotalProfit(profitData) {
 }
 
 function calculatePercentage(totalProfit) {
-  document.getElementById("capitalPercentage").innerText =
-    (100 * totalProfit) / 50000;
+  document.getElementById("capitalPercentage").innerText = parseFloat(
+    (100 * totalProfit) / 50000
+  ).toFixed(2);
 }
