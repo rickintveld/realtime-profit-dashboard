@@ -13,8 +13,11 @@ node index.js
 Runs on http://localhost:3000/
 
 ## Manual add profit
+
 ```
 node prompt/profit.js
 > answer in the questions
 > done
 ```
+
+![screenshot](./assets/image/screenshot.png)
