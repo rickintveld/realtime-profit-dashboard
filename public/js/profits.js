@@ -122,4 +122,11 @@ function updateTotalProfit(profitData) {
   } else {
     profits.className = "text-danger";
   }
+
+  calculatePercentage(total);
+}
+
+function calculatePercentage(totalProfit) {
+  document.getElementById("capitalPercentage").innerText =
+    (100 * totalProfit) / 50000;
 }
