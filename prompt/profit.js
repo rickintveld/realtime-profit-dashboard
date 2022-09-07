@@ -53,7 +53,10 @@ const schema = {
 prompt.start();
 
 prompt.get(schema, function (err, result) {
-  profit = { ...result };
+  profit = {
+    ...result,
+    time: new Date().toISOString(),
+  };
 
   if (!err) {
     console.log("Sending new profit..:", profit);

@@ -1,7 +1,6 @@
 feather.replace({ "aria-hidden": "true" });
 const socket = io();
 const chartData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-const date = new Date();
 
 // Data chart
 const ctx = document.getElementById("profitChart");
@@ -79,7 +78,10 @@ function addProfit(profitData) {
     lotSize,
     commission,
     profit,
+    time,
   } = profitData;
+
+  const date = new Date(time);
 
   const table = document
     .getElementById("profit-table")
@@ -111,8 +113,15 @@ function addProfit(profitData) {
   profitCell.innerHTML = "$" + profit.toFixed(2);
   profitCell.className = profit > 0 ? "text-success" : "text-danger";
 
-  chart.data.datasets[0].data[date.getMonth()] =
-    chart.data.datasets[0].data[date.getMonth()] + profit;
+  chart.data.datasets[0].data.forEach((p, i) => {
+    const month = new Date(
+      `${date.getFullYear()}-${i + 1}-${date.getDay()}`
+    ).getMonth();
+
+    if (month >= date.getMonth()) {
+      chart.data.datasets[0].data[month] = p + (profit - commission);
+    }
+  });
   chart.update();
 }
 
