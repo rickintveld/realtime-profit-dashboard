@@ -1,1 +1,23 @@
-[{"type":"BUY","symbol":"GBP/USD","openPrice":1.16905,"stopLoss":1.16889,"takeProfit":1.1718,"lotSize":5,"commission":15,"profit":530,"time":"2022-08-29"},{"type":"SELL","symbol":"GBP/USD","openPrice":1.17324,"stopLoss":1.17356,"takeProfit":1.17156,"lotSize":5,"commission":15,"profit":270,"time":"2022-08-30"},{"type":"BUY","symbol":"GBP/USD","openPrice":1.17161,"stopLoss":1.17082,"takeProfit":1.17239,"lotSize":5,"commission":15,"profit":40,"time":"2022-08-30"},{"type":"BUY","symbol":"GBP/JPY","openPrice":161.678,"stopLoss":161.666,"takeProfit":161.881,"lotSize":5,"commission":15,"profit":-43.32,"time":"2022-08-31"},{"type":"BUY","symbol":"GBP/USD","openPrice":1.16748,"stopLoss":1.16698,"takeProfit":1.17048,"lotSize":5,"commission":15,"profit":105,"time":"2022-08-31"},{"type":"BUY","symbol":"GBP/USD","openPrice":1.1678,"stopLoss":1.16704,"takeProfit":1.1688,"lotSize":5,"commission":15,"profit":170,"time":"2022-08-31"},{"type":"SELL","symbol":"GBP/JPY","openPrice":161.564,"stopLoss":161.73,"takeProfit":161.351,"lotSize":5,"commission":15,"profit":173.33,"time":"2022-08-31"},{"type":"SELL","symbol":"EUR/USD","openPrice":1.00089,"stopLoss":1.00181,"takeProfit":0.9971,"lotSize":5,"commission":15,"profit":235,"time":"2022-08-31"},{"type":"SELL","symbol":"EUR/USD","openPrice":1.00065,"stopLoss":1.00118,"takeProfit":0.9982,"lotSize":5,"commission":15,"profit":225,"time":"2022-08-31"},{"type":"BUY","symbol":"EUR/USD","openPrice":1.00191,"stopLoss":1.00137,"takeProfit":1.00323,"lotSize":5,"commission":15,"profit":210,"time":"2022-09-01T07:49:08.483Z"},{"type":"BUY","symbol":"EUR/USD","openPrice":1.00365,"stopLoss":1.00275,"takeProfit":1.0079,"lotSize":5,"commission":15,"profit":-450,"time":"2022-09-01T08:39:43.838Z"},{"type":"SELL","symbol":"GBP/JPY","openPrice":161.385,"stopLoss":161.45,"takeProfit":160.95,"lotSize":5,"commission":15,"profit":-232.78,"time":"2022-09-01T13:05:44.531Z"},{"type":"SELL","symbol":"GBP/JPY","openPrice":161.385,"stopLoss":161.47,"takeProfit":160.95,"lotSize":5,"commission":15,"profit":-318.8,"time":"2022-09-01T13:06:22.216Z"},{"type":"BUY","symbol":"EUR/USD","openPrice":0.99712,"stopLoss":0.99636,"takeProfit":0.99626,"lotSize":5,"commission":15,"profit":55,"time":"2022-09-02T09:34:52.429Z"},{"type":"SELL","symbol":"EUR/USD","openPrice":1.00115,"stopLoss":1.00111,"takeProfit":0.99008,"lotSize":2.5,"commission":7.5,"profit":417.5,"time":"2022-09-02T12:48:19.389Z"},{"type":"SELL","symbol":"EUR/USD","openPrice":1.00115,"stopLoss":1.00111,"takeProfit":0.99008,"lotSize":2.5,"commission":7.5,"profit":-42.5,"time":"2022-09-02T12:49:05.582Z"},{"type":"BUY","symbol":"EUR/USD","openPrice":0.99084,"stopLoss":0.9909,"takeProfit":0.9945,"lotSize":5,"commission":15,"profit":30,"time":"2022-09-05T09:04:08.642Z"},{"type":"BUY","symbol":"EUR/USD","openPrice":0.99125,"stopLoss":0.99074,"takeProfit":0.9945,"lotSize":5,"commission":15,"profit":-260,"time":"2022-09-05T09:04:44.542Z"},{"type":"SELL","symbol":"EUR/USD","openPrice":0.99796,"stopLoss":0.99847,"takeProfit":0.98783,"lotSize":5,"commission":15,"profit":170,"time":"2022-09-06T07:59:41.002Z"},{"type":"SEL","symbol":"GBP/USD","openPrice":1.15753,"stopLoss":1.15748,"takeProfit":1.15649,"lotSize":5,"commission":15,"profit":345,"time":"2022-09-06T12:08:11.218Z"},{"type":"SELL","symbol":"EUR/USD","openPrice":0.99284,"stopLoss":0.99333,"takeProfit":0.99152,"lotSize":5,"commission":15,"profit":30,"time":"2022-09-06T12:22:38.595Z"}]
+[{
+        "type": "BUY",
+        "symbol": "EUR/USD",
+        "openPrice": 0.97,
+        "stopLoss": 0.965,
+        "takeProfit": 1,
+        "lotSize": 10,
+        "commission": 30,
+        "profit": 1000,
+        "time": "2022-10-01T12:59:30.870Z"
+    },
+    {
+        "type": "SELL",
+        "symbol": "GBP/USD",
+        "openPrice": 1.2,
+        "stopLoss": 1.25,
+        "takeProfit": 1,
+        "lotSize": 10,
+        "commission": 30,
+        "profit": 2000,
+        "time": "2022-10-01T13:10:15.797Z"
+    }
+]

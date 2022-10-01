@@ -1,52 +1,4 @@
-feather.replace({ "aria-hidden": "true" });
 const socket = io();
-const chartData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-
-// Data chart
-const ctx = document.getElementById("profitChart");
-const chart = new Chart(ctx, {
-  type: "line",
-  data: {
-    labels: [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ],
-    datasets: [
-      {
-        data: chartData,
-        lineTension: 0,
-        backgroundColor: "transparent",
-        borderColor: "#007bff",
-        borderWidth: 4,
-        pointBackgroundColor: "#007bff",
-      },
-    ],
-  },
-  options: {
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            beginAtZero: false,
-          },
-        },
-      ],
-    },
-    legend: {
-      display: false,
-    },
-  },
-});
 
 // add profits
 socket.on("add_profit", (profit) => {
@@ -78,10 +30,7 @@ function addProfit(profitData) {
     lotSize,
     commission,
     profit,
-    time,
   } = profitData;
-
-  const date = new Date(time);
 
   const table = document
     .getElementById("profit-table")
@@ -94,8 +43,7 @@ function addProfit(profitData) {
   const takeProfitCell = row.insertCell(3);
   const stopLossCell = row.insertCell(4);
   const lotSizeCell = row.insertCell(5);
-  const commissionCell = row.insertCell(6);
-  const profitCell = row.insertCell(7);
+  const profitCell = row.insertCell(6);
 
   let icon = '<i class="fa fa-arrow-down text-danger"></i> ';
   if (["BUY", "buy"].includes(type)) {
@@ -108,21 +56,8 @@ function addProfit(profitData) {
   takeProfitCell.innerHTML = takeProfit;
   stopLossCell.innerHTML = stopLoss;
   lotSizeCell.innerHTML = parseFloat(lotSize).toFixed(2);
-  commissionCell.innerHTML = "$" + parseFloat(commission).toFixed(2);
-  commissionCell.className = "text-danger";
-  profitCell.innerHTML = "$" + profit.toFixed(2);
+  profitCell.innerHTML = "$" + (profit.toFixed(2) - commission);
   profitCell.className = profit > 0 ? "text-success" : "text-danger";
-
-  chart.data.datasets[0].data.forEach((p, i) => {
-    const month = new Date(
-      `${date.getFullYear()}-${i + 1}-${date.getDay()}`
-    ).getMonth();
-
-    if (month >= date.getMonth()) {
-      chart.data.datasets[0].data[month] = p + (profit - commission);
-    }
-  });
-  chart.update();
 }
 
 function updateTotalProfit(profitData) {
@@ -141,7 +76,8 @@ function updateTotalProfit(profitData) {
 }
 
 function calculatePercentage(totalProfit) {
+  const capital = 100000;
   document.getElementById("capitalPercentage").innerText = parseFloat(
-    (100 * totalProfit) / 50000
+    (100 * totalProfit) / capital
   ).toFixed(2);
 }
